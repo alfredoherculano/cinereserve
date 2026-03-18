@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class Profile(AbstractUser):
+    pass
 
 class Movie(models.Model):
     title = models.CharField(max_length=50, unique=True, null=False)

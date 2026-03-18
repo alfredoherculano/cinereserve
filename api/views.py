@@ -1,6 +1,10 @@
 from rest_framework import viewsets
-from .models import Movie, Session
-from .serializers import MovieSerializer, SessionSerializer
+from .models import Profile, Movie, Session
+from .serializers import ProfileSerializer, MovieSerializer, SessionSerializer
+
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
