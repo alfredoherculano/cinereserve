@@ -6,7 +6,7 @@ The CineReserve API is a RESTful backend for managing cinema operations.
 
 ## Environment Variables
 
-- Creat a ```.env``` in the application root directory and fill with the necessary values.
+- Create a ```.env``` in the application root directory and fill with the necessary values.
 - Use ```.env.example``` as reference.
 
 ## Running with Docker
@@ -33,4 +33,4 @@ The CineReserve API is a RESTful backend for managing cinema operations.
 
 4. Access the app:
 
-    ```http://127.0.0.1:8000```
+    ```http://127.0.0.1:8000/api```
