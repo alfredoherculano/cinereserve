@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Movie, Profile, Session
+from .models import Movie, Profile, Session, Seat
 from django.contrib.auth import get_user_model
 
 Profile = get_user_model()
@@ -28,3 +28,10 @@ class SessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Session
         fields = ['id', 'date', 'movie']
+
+class SeatSerializer(serializers.ModelSerializer):
+    movie = serializers.CharField(source='session.movie.title', read_only=True)
+
+    class Meta:
+        model = Seat
+        fields = ['id', 'session', 'movie', 'seat_number', 'status']
