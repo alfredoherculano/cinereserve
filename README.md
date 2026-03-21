@@ -33,4 +33,7 @@ The CineReserve API is a RESTful backend for managing cinema operations.
 
 4. Access the app:
 
-    ```http://127.0.0.1:8000/api```
+    ```
+    http://127.0.0.1:8000/api
+    http://127.0.0.1:8000/api/docs > For Swagger UI documentation
+    ```
