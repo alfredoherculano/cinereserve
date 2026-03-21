@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-from api.views import MovieViewSet, SessionViewSet, ProfileViewSet
+from api.views import MovieViewSet, SessionViewSet, ProfileViewSet, SeatViewSet
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -29,6 +29,7 @@ router = DefaultRouter()
 router.register('movies', MovieViewSet)
 router.register('sessions', SessionViewSet)
 router.register('users', ProfileViewSet)
+router.register('seats', SeatViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

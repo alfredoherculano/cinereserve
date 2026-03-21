@@ -17,4 +17,18 @@ class Session(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.date
+        return str(self.date)
+    
+class Seat(models.Model):
+    STATUS_CHOICES = [
+        ('available', 'Available'),
+        ('reserved', 'Reserved'),
+        ('purchased', 'Purchased'),
+    ]
+
+    session = models.ForeignKey(Session, on_delete=models.CASCADE)
+    seat_number = models.IntegerField(null=False)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='available')
+
+    def __str__(self):
+        return str(self.seat_number)
